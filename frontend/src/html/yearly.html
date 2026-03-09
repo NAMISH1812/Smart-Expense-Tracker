@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Yearly Financial Report</title>
+
+<link rel="stylesheet" href="../css/dashboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="nav-left">
+<div class="logo">ET</div>
+<span class="app-name">Expense Tracker</span>
+</div>
+
+<nav class="nav-right">
+ <a href="dashboard.html" class="nav-link">Dashboard</a>
+ <a href="analysis.html" class="nav-link">Analysis</a>
+<a href="chatbot.html" class="nav-link active">Chatbot</a>
+<a href="yearly.html" class="nav-link">Yearly Report</a>
+<a href="login.html" class="nav-link logout">Logout</a>
+</nav>
+</header>
+
+<main class="container">
+
+<section class="card">
+
+<h2>Yearly Financial Overview</h2>
+
+<canvas id="yearChart"></canvas>
+
+</section>
+
+<section class="card">
+
+<h2>Monthly Data</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Month</th>
+<th>Budget</th>
+<th>Spent</th>
+<th>Savings</th>
+</tr>
+</thead>
+
+<tbody id="yearTable"></tbody>
+
+</table>
+
+<button onclick="downloadCSV()">Download CSV</button>
+
+</section>
+
+</main>
+
+<script src="../js/yearly.js"></script>
+
+</body>
+</html>

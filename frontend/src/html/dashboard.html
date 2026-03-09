@@ -1,0 +1,122 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Expense Tracker Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+  </head>
+
+  <body>
+
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo">ET</div>
+      <span class="app-name">Expense Tracker</span>
+    </div>
+
+    <nav class="nav-right">
+      <a href="dashboard.html" class="nav-link active">Dashboard</a>
+      <a href="analysis.html" class="nav-link">Analysis</a>
+      <a href="chatbot.html" class="nav-link">Chatbot</a>
+      <a href="yearly.html" class="nav-link">Yearly Report</a>
+    <a class="nav-link logout" id="logoutBtn">Logout</a>
+    </nav>
+  </header>
+
+  <section class="date-bar">
+    <h2>Expense Dashboard</h2>
+    <p id="currentDate"></p>
+  </section>
+
+  <main class="container">
+
+  <!-- BUDGET -->
+  <section class="card">
+
+  <h2>Set Monthly Budget</h2>
+
+  <input type="number" id="budgetInput" placeholder="Enter monthly budget">
+
+  <button onclick="setBudget()" class="btn">Set Budget</button>
+
+  <p id="budgetDisplay"></p>
+
+  </section>
+<section class="card">
+<div class="budget-progress-container">
+
+<div id="budgetProgressBar"></div>
+
+</div>
+<h2>Financial Health Score</h2>
+
+<div class="score-box">
+
+<h1 id="financialScore">--</h1>
+
+<p id="scoreStatus"></p>
+
+</div>
+
+</section>
+
+  <!-- ADD EXPENSE -->
+  <section class="card">
+
+  <h2>Add Expense</h2>
+
+  <div class="form-row">
+
+  <input type="date" id="date">
+
+  <input type="number" id="amount" placeholder="Amount">
+
+  <select id="category">
+  <option>Food</option>
+  <option>Transport</option>
+  <option>Utilities</option>
+  <option>Shopping</option>
+  <option>Entertainment</option>
+  </select>
+
+  <input type="text" id="description" placeholder="Description">
+
+  </div>
+
+  <button onclick="addExpense()">Add Expense</button>
+
+  </section>
+
+
+  <!-- EXPENSE TABLE -->
+  <section class="card">
+
+  <h2>Monthly Expenses</h2>
+
+  <table>
+
+  <thead>
+  <tr>
+  <th>Date</th>
+  <th>Category</th>
+  <th>Description</th>
+  <th>Amount</th>
+  </tr>
+  </thead>
+
+  <tbody id="expenseTable"></tbody>
+
+  </table>
+
+  <h3 id="totalSpent"></h3>
+
+  <p id="weeklySpent"></p>
+
+  </section>
+
+  </main>
+
+  <script src="/js/dashboard.js"></script>
+
+  </body>
+  </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/auth.css" />
+  <title>Sign Up</title>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Brand -->
+    <div class="brand">
+      <div class="logo">ET</div>
+      <h2>Expense Tracker</h2>
+    </div>
+
+    <!-- Heading -->
+    <h2>Create your account</h2>
+    <p class="lead">Sign up to get started with your account</p>
+
+    <!-- Form -->
+   <form id="signupForm" onsubmit=return false>
+
+      <div class="input-group">
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Create a strong password"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="confirm-password">Confirm password</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          placeholder="Repeat your password"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn">Create Account</button>
+    </form>
+
+    <!-- Links -->
+    <div class="helper">
+      Already have an account?
+    </div>
+    <div class="helper">
+      <a href="login.html">Log in</a>
+    </div>
+
+    <div class="helper">
+      <a href="forgot-password.html">Forgot password?</a>
+    </div>
+
+  </div>
+  <script src="/js/signup.js" defer></script>
+</body>
+</html>

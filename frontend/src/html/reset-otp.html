@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/auth.css">
+<title>Verify OTP</title>
+
+<style>
+
+.otp-container{
+display:flex;
+justify-content:center;
+gap:10px;
+margin:20px 0;
+}
+
+.otp-input{
+width:40px;
+height:45px;
+font-size:20px;
+text-align:center;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Verify OTP</h2>
+<p class="lead">Enter the 6 digit OTP sent to your email</p>
+
+<form id="otpForm">
+
+<div class="otp-container">
+
+<input class="otp-input" maxlength="1">
+<input class="otp-input" maxlength="1">
+<input class="otp-input" maxlength="1">
+<input class="otp-input" maxlength="1">
+<input class="otp-input" maxlength="1">
+<input class="otp-input" maxlength="1">
+
+</div>
+
+<button type="submit" class="btn">Verify OTP</button>
+
+</form>
+
+<p>Didn't receive the OTP? <a href="forgot-password.html">Resend OTP</a></p>
+
+</div>
+
+<script>
+
+const inputs = document.querySelectorAll(".otp-input");
+
+/* Auto move cursor */
+
+inputs.forEach((input, index)=>{
+
+input.addEventListener("input",()=>{
+
+if(input.value && index < inputs.length-1){
+inputs[index+1].focus();
+}
+
+});
+
+});
+
+/* Form submit */
+
+document.getElementById("otpForm").addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+let otp="";
+
+inputs.forEach(i=>{
+otp += i.value;
+});
+
+localStorage.setItem("resetOtp",otp);
+
+/* redirect */
+
+window.location.href="/html/reset-password.html";
+
+});
+
+</script>
+
+</body>
+</html>

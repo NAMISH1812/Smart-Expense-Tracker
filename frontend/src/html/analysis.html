@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Analysis | Expense Tracker</title>
+
+  <link rel="stylesheet" href="../css/analysis.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+  <div class="nav-left">
+    <div class="logo">ET</div>
+    <div class="app-name">Expense Tracker</div>
+  </div>
+
+  <div class="nav-right">
+    <a href="dashboard.html" class="nav-link">Dashboard</a>
+    <a href="analysis.html" class="nav-link active">Analysis</a>
+    <a href="chatbot.html" class="nav-link">Chatbot</a>
+     <a href="yearly.html" class="nav-link">Yearly Report</a>
+    <a href="index.html" class="nav-link logout">Logout</a>
+  </div>
+
+</div>
+
+
+<!-- MAIN -->
+<div class="container">
+
+  <div class="date-bar">
+    <h2>Reports & Analysis</h2>
+    <p>Monthly insights and spending trends</p>
+  </div>
+
+
+  <!-- MONTH SELECT -->
+  <div class="card">
+
+    <div class="form-row">
+
+      <select id="monthFilter">
+        <option value="0">January</option>
+        <option value="1">February</option>
+        <option value="2" selected>March</option>
+        <option value="3">April</option>
+        <option value="4">May</option>
+        <option value="5">June</option>
+        <option value="6">July</option>
+        <option value="7">August</option>
+        <option value="8">September</option>
+        <option value="9">October</option>
+        <option value="10">November</option>
+        <option value="11">December</option>
+      </select>
+
+      <button id="downloadCSV">Download CSV</button>
+      <button id="downloadPDF">Download PDF</button>
+
+    </div>
+
+  </div>
+
+
+  <!-- MONTHLY COMPARISON -->
+  <div class="card">
+
+    <h2>Monthly Comparison</h2>
+
+    <div class="bar-chart">
+
+      <div class="bar"><span>Jan</span></div>
+      <div class="bar"><span>Feb</span></div>
+      <div class="bar active"><span>Mar</span></div>
+      <div class="bar"><span>Apr</span></div>
+      <div class="bar"><span>May</span></div>
+      <div class="bar"><span>Jun</span></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- CATEGORY BREAKDOWN -->
+  <div class="card">
+
+<h2>Category Breakdown</h2>
+
+<div style="width:300px">
+
+<canvas id="categoryChart"></canvas>
+
+</div>
+
+</div>
+<div class="card">
+
+<h2>Budget Status</h2>
+
+<p id="budgetText"></p>
+
+<div style="
+width:100%;
+height:20px;
+background:#1e293b;
+border-radius:10px;
+overflow:hidden;
+">
+
+<div id="budgetBar" style="
+height:100%;
+width:0%;
+background:#2563eb;
+transition:0.3s;
+"></div>
+
+</div>
+
+</div>
+
+  <!-- SPENDING TREND -->
+  <div class="card">
+
+<h2>Spending Trend (Last 6 Months)</h2>
+
+<svg class="sparkline" viewBox="0 0 120 40">
+
+  <polyline
+    fill="none"
+    stroke="#2563EB"
+    stroke-width="2"
+    points="0,30 20,24 40,18 60,10 80,16 100,12 120,22">
+  </polyline>
+
+  <polyline
+    fill="rgba(37,99,235,0.08)"
+    stroke="none"
+    points="0,30 20,24 40,18 60,10 80,16 100,12 120,22 120,40 0,40">
+  </polyline>
+
+</svg>
+
+</div>
+
+
+<section class="card">
+
+<h2>Monthly Savings</h2>
+
+<canvas id="savingsChart"></canvas>
+
+</section>
+
+
+  <!-- TRANSACTIONS -->
+  <div class="card">
+
+    <h2>Transactions</h2>
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Amount</th>
+        </tr>
+
+      </thead>
+
+      <tbody id="transactionsBody">
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+</div>
+
+
+<script src="/js/analysis.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<canvas id="savingsChart"></canvas>
+</body>
+</html>

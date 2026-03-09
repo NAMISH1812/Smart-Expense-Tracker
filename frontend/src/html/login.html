@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/auth.css" />
+  <title>Login | Expense Tracker</title>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Brand -->
+    <div class="brand">
+      <div class="logo">ET</div>
+      <h2>Expense Tracker</h2>
+    </div>
+
+    <h2>Welcome Back</h2>
+    <p class="lead">Login to manage your expenses efficiently</p>
+
+    <form>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="••••••••" required />
+      </div>
+
+      <div class="link-row">
+        <label>
+          <input type="checkbox" /> Remember me
+        </label>
+        <a href="forgot-password.html">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <p class="helper">
+      Don’t have an account?
+      <a href="signup.html">Sign up</a>
+    </p>
+  </div>
+
+  <!-- Add this script before closing body -->
+  <script src="/js/login.js" defer></script>
+
+</body>
+</html>

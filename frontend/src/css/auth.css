@@ -1,0 +1,289 @@
+/* =========================
+   Global Variables
+========================= */
+:root {
+  --bg-1: #f4f7fb;
+  --bg-2: #eef6ff;
+  --card: #ffffff;
+  --primary: #2563EB;
+  --primary-600: #1e4fcf;
+  --muted: #6b7280;
+  --text: #0f172a;
+  --accent: #06B6D4;
+  --danger: #ef4444;
+
+  --radius: 12px;
+  --shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  --glass: rgba(255, 255, 255, 0.7);
+
+  --max-width: 420px;
+  --gap: 14px;
+
+  font-family: Inter, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+}
+
+/* =========================
+   Reset & Base Styles
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================
+   Centered Card Container
+========================= */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 64px auto;
+  padding: 28px;
+  background: linear-gradient(180deg, var(--card), var(--glass));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(20, 40, 80, 0.03);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* =========================
+   Branding
+========================= */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.brand .logo {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.14);
+}
+
+.brand h2 {
+  font-size: 18px;
+  color: var(--primary);
+}
+
+/* =========================
+   Headings & Text
+========================= */
+h2 {
+  font-size: 20px;
+  margin: 8px 0 14px;
+  color: var(--text);
+}
+
+p.lead {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* =========================
+   Form Fields
+========================= */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.input-group input {
+  height: 46px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e6eefc;
+  background: linear-gradient(180deg, #fff, #fbfdff);
+  font-size: 14px;
+  color: var(--text);
+  transition: border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.12s ease;
+}
+
+.input-group input::placeholder {
+  color: #9aa6bf;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Error State (Optional)
+========================= */
+.input-group.error input {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.input-group.error small {
+  font-size: 12px;
+  color: var(--danger);
+}
+
+/* =========================
+   Buttons
+========================= */
+.btn {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(
+    180deg,
+    var(--primary),
+    var(--primary-600)
+  );
+  color: #fff;
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.12);
+  transition: transform 0.12s ease,
+    box-shadow 0.12s ease,
+    opacity 0.12s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.14);
+}
+
+.btn:active {
+  transform: translateY(0);
+  opacity: 0.95;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* =========================
+   Links & Helpers
+========================= */
+.link-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.link-row label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.link-row a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-row a:hover {
+  text-decoration: underline;
+}
+
+.helper {
+  font-size: 13px;
+  color:  #cbd5f5;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* =========================
+   Checkbox Styling
+========================= */
+input[type="checkbox"] {
+  accent-color: var(--primary);
+}
+
+/* =========================
+   Accessibility
+========================= */
+a:focus,
+input:focus,
+button:focus {
+  outline: 3px solid rgba(37, 99, 235, 0.12);
+  outline-offset: 2px;
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 520px) {
+  .container {
+    margin: 28px 16px;
+    padding: 20px;
+  }
+
+  .brand .logo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* =========================
+   Dark Mode (Optional Bonus)
+========================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-1: #0f172a;
+    --bg-2: #020617;
+    --card: #020617;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+  }
+}

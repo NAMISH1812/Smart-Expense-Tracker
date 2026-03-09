@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Dashboard styles -->
+  <link rel="stylesheet" href="../css/dashboard.css">
+
+  <!-- Chatbot styles -->
+  <link rel="stylesheet" href="../css/chatbot.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+  <div class="nav-left">
+    <div class="logo">ET</div>
+    <span class="app-name">Expense Tracker</span>
+  </div>
+
+  <nav class="nav-right">
+    <a href="dashboard.html" class="nav-link">Dashboard</a>
+    <a href="analysis.html" class="nav-link">Analysis</a>
+    <a href="chatbot.html" class="nav-link active">Chatbot</a>
+     <a href="yearly.html" class="nav-link">Yearly Report</a>
+    <a href="login.html" class="nav-link logout">Logout</a>
+  </nav>
+
+</header>
+
+
+<main class="container">
+
+<section class="chatbot-card">
+
+<h2>Expense Assistant</h2>
+
+<div class="chat-window" id="chatMessages">
+
+<div class="message bot">
+Hello 👋 I can help you with your expenses.
+
+Try asking:
+
+• What is my monthly budget?  
+• What is my weekly spending?  
+• What are my monthly savings?  
+• Where am I spending the most money?
+• How is my financial management?
+</div>
+
+</div>
+
+
+<div class="chat-input">
+
+<input 
+type="text" 
+id="userInput" 
+placeholder="Ask about your expenses..." 
+autocomplete="off"
+/>
+
+<button onclick="askBot()">Send</button>
+
+</div>
+
+</section>
+
+</main>
+
+
+<script src="../js/chatbot.js"></script>
+
+</body>
+</html>

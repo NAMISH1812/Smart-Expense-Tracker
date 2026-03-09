@@ -1,0 +1,198 @@
+/* ===== Background (Same as other pages) ===== */
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #020617, #0f172a);
+  color: #e5e7eb;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* ===== Form Row ===== */
+.form-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+select {
+  background: #020617;
+  color: #e5e7eb;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+button {
+  background: linear-gradient(180deg, #2563eb, #1e40af);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(37,99,235,0.4);
+}
+
+/* ===== Bar Chart ===== */
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 120px;
+  margin-top: 20px;
+}
+
+.bar {
+  flex: 1;
+  height: var(--h);
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px 8px 4px 4px;
+  position: relative;
+}
+
+.bar.active {
+  background: linear-gradient(180deg,#2563EB,#1e40af);
+}
+
+.bar span {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ===== Pie ===== */
+.pie-wrap {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.pie {
+  width: 140px;
+  height: 140px;
+}
+
+.pie-legend {
+  list-style: none;
+  padding: 0;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.blue { background:#2563EB; }
+.teal { background:#06B6D4; }
+.green { background:#10B981; }
+
+/* ===== Sparkline ===== */
+.sparkline {
+  width: 100%;
+  height: 60px;
+  margin-top: 20px;
+}
+
+/* ===== Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  text-align: left;
+  color: #93c5fd;
+  padding-bottom: 10px;
+}
+
+td {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+/* ===== NAVBAR (same as other pages) ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: rgba(15, 23, 42, 0.9);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: white;
+}
+
+.app-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #3b82f6;
+}
+
+.nav-right {
+  display: flex;
+  gap: 26px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #cbd5f5;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: #60a5fa;
+}
+
+.nav-link.active {
+  color: #3b82f6;
+}
+
+.nav-link.logout {
+  color: #f87171;
+}
+
+.nav-link.logout:hover {
+  color: #ef4444;
+}
